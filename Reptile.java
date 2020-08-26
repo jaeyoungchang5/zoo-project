@@ -1,4 +1,4 @@
-class Reptile extends Animal {
+abstract class Reptile extends Animal {
     boolean resurfaceToBreath;
     boolean liveInSaltwater;
 

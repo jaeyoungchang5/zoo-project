@@ -1,7 +1,4 @@
-// hasTalons
-// canFly
-
-class Bird extends Animal {
+abstract class Bird extends Animal {
     boolean hasTalons;
     boolean canFly;
 

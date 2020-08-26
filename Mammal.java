@@ -1,4 +1,4 @@
-class Mammal extends Animal {
+abstract class Mammal extends Animal {
     boolean eatsMeat;
     boolean potentiallyDeadly;
 

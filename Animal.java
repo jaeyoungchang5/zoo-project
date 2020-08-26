@@ -1,4 +1,4 @@
-class Animal {
+abstract class Animal {
     String uniqueName;
     String conservationStatus;
     String animalType;
