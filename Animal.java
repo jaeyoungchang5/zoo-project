@@ -10,7 +10,7 @@ abstract class Animal {
         this.animalType = animalType;
         this.gender = gender;
     }
-
+    // special display (abstract class) - something everybody does, but everybody does differently
     void setUniqueName(String uniqueName){
         this.uniqueName = uniqueName;
     }

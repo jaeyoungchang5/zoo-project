@@ -1,5 +1,5 @@
 public class ZooTest {
-    static void setAnimals(){
+    static void setupAnimals(){
         Animal[] animals = new Animal[6];
         animals[0] = new Wolf("Akela", "least concern", "Indian Wolf", "Male", true, true, true, true);
         animals[1] = new Falcon("Millenium", "least concern", "Falcon", "Male", true, true, "North America", false);
@@ -32,6 +32,6 @@ public class ZooTest {
         // animals[4] = new Penguin("Kowalski", "near threatened", "Adelie Penguin", "Male", false, false, false, false);
         // animals[5] = new Alligator("Swampy", "least concern", "American Alligator", "Male", true, false, false);
         // printNames(animals);
-        setAnimals();
+        setupAnimals();
     }
 }
