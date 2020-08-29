@@ -6,6 +6,10 @@ class Alligator extends Reptile {
         this.isMother = isMother;
     }
 
+    static void setupAlligator(){
+        
+    }
+
     void setIsMother(boolean isMother){
         this.isMother = isMother;
     }

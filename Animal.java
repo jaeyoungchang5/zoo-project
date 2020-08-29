@@ -11,6 +11,13 @@ abstract class Animal {
         this.gender = gender;
     }
     // special display (abstract class) - something everybody does, but everybody does differently
+    // abstract void setSpecialAttribute(String specialAttribute) {
+    //     return;
+    // }
+    void setupAnimal(){
+        System.out.println("What type of animal?");
+    }
+
     void setUniqueName(String uniqueName){
         this.uniqueName = uniqueName;
     }
