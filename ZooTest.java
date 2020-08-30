@@ -73,6 +73,7 @@ public class ZooTest {
             String option = myScanner.nextLine();
 
             if (option.compareTo("add") == 0){
+				System.out.println("You can add a: wolf, lion, falcon, penguin, turtle, or aligator");
                 System.out.println("Animal name: ");
                 String name = myScanner.nextLine();
                 System.out.println("Animal type: ");
@@ -80,15 +81,40 @@ public class ZooTest {
                 System.out.println("Animal gender: ");
                 String gender = myScanner.nextLine();
                 if (animalType.compareTo("wolf") == 0){
-                    Animal newAnimal = new Wolf(name, "blank", animalType, gender, true, true, true, true);
+                    Animal newAnimal = new Wolf(name, "least concern", "Indian Wolf", gender, true, true, true, true);
                     animals = addAnimal(newAnimal, animals);
                 }
+				else if (animalType.compareTo("lion") == 0){
+					Animal newAnimal = new Lion(name, "vulnerable", "South African Lion", gender, true, true, false, true);
+					animals = addAnimal(newAnimal, animals);
+				}
+				else if(animalType.compareTo("falcon") == 0){
+					System.out.println("Falcon continent: ");
+					String continent = myScanner.nextLine();
+					Animal newAnimal = new Falcon(name, "least concern", "Falcon", gender, true, true, continent, false);
+				    animals = addAnimal(newAnimal, animals);	
+				}
+				else if(animalType.compareTo("penguin") == 0){
+					Animal newAnimal = new Penguin(name, "near threatened", "Adelie Penguin", gender, false, false, false, false);
+					animals = addAnimal(newAnimal, animals);
+				}
+				else if(animalType.compareTo("turtle") == 0){
+					Animal newAnimal = new Turtle(name, "endangered", "Sea Turtle", gender, true, true, true, true);
+					animals = addAnimal(newAnimal, animals);
+				}
+				else if(animalType.compareTo("alligator") == 0){
+					Animal newAnimal = new Alligator(name, "least concern", "American Alligator", gender, true, false, false);
+					animals = addAnimal(newAnimal, animals);
+				}
+				else{
+					System.out.println("Try Again -- Not A Valid Animal Type");
+				}
             } else if (option.compareTo("delete") == 0){
                 System.out.println("Animal name: ");
                 String name = myScanner.nextLine();
                 animals = deleteAnimal(name, animals);
             } else if (option.compareTo("display") == 0){
-                System.out.println("Displaying");
+                printSummary(animals);
             } else if (option.compareTo("exit") == 0) {
                 System.out.println("bye");
                 break;
