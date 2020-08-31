@@ -2,10 +2,14 @@ class Turtle extends Reptile {
     boolean hasLaidEggs;
     boolean isLandBased;
 
-    Turtle(String uniqueName, String conservationStatus, String animalType, String gender, boolean resurfaceToBreath, boolean liveInSaltwater, boolean hasLaidEggs, boolean isLandBased){
-        super(uniqueName, conservationStatus, animalType, gender, resurfaceToBreath, liveInSaltwater);
+    Turtle(String uniqueName, String gender, boolean hasLaidEggs, boolean isLandBased){
+        super(uniqueName, "endangered", "turtle", gender, true, true);
         this.hasLaidEggs = hasLaidEggs;
         this.isLandBased = isLandBased;
+    }
+
+    void displaySpecialInfo(){
+        System.out.println(this.uniqueName + " is a " + this.gender + " " + this.animalType + " that " + (this.hasLaidEggs ? "has" : "has not") + " laid eggs and " + (this.isLandBased ? "is" : "is not") + " land based.");
     }
 
     void setHasLaidEggs(boolean hasLaidEggs){

@@ -8,13 +8,13 @@ abstract class Reptile extends Animal {
         this.liveInSaltwater = liveInSaltwater;
     }
 
-    void setResurfaceToBreath(boolean resurfaceToBreath){
+    final void setResurfaceToBreath(boolean resurfaceToBreath){
         this.resurfaceToBreath = resurfaceToBreath;
     }
-    void setLiveInSaltwater(boolean liveInSaltwater){
+    final void setLiveInSaltwater(boolean liveInSaltwater){
         this.liveInSaltwater = liveInSaltwater;
     }
 
-    boolean getResurfaceToBreath() { return this.resurfaceToBreath; }
-    boolean getLiveInSaltwater() { return this.liveInSaltwater; }
+    final boolean getResurfaceToBreath() { return this.resurfaceToBreath; }
+    final boolean getLiveInSaltwater() { return this.liveInSaltwater; }
 }

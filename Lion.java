@@ -2,10 +2,14 @@ class Lion extends Mammal {
     boolean hasCubs;
     boolean isNapping;
 
-    Lion(String uniqueName, String conservationStatus, String animalType, String gender, boolean eatsMeat, boolean potentiallyDeadly, boolean hasCubs, boolean isNapping){
-        super(uniqueName, conservationStatus, animalType, gender, eatsMeat, potentiallyDeadly);
+    Lion(String uniqueName, String gender, boolean hasCubs, boolean isNapping){
+        super(uniqueName, "vulnerable", "lion", gender, true, true);
         this.hasCubs = hasCubs;
         this.isNapping = isNapping;
+    }
+
+    void displaySpecialInfo(){
+        System.out.println(this.uniqueName + " is a " + this.gender + " " + this.animalType + " that " + (this.hasCubs ? "has" : "does not have") + " cubs and " + (this.isNapping ? "is" : "is not") + " currently napping.");
     }
 
     void setHasCubs(boolean hasCubs){

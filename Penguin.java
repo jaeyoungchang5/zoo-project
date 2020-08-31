@@ -2,10 +2,14 @@ class Penguin extends Bird {
     boolean hasLaidEggs;
     boolean isCarryingEgg;
 
-    Penguin(String uniqueName, String conservationStatus, String animalType, String gender, boolean hasTalons, boolean canFly, boolean hasLaidEggs, boolean isCarryingEgg){
-        super(uniqueName, conservationStatus, animalType, gender, canFly, hasTalons);
+    Penguin(String uniqueName, String gender, boolean hasLaidEggs, boolean isCarryingEgg){
+        super(uniqueName, "near threatened", "penguin", gender, false, false);
         this.hasLaidEggs = hasLaidEggs;
         this.isCarryingEgg = isCarryingEgg;
+    }
+
+    void displaySpecialInfo(){
+        System.out.println(this.uniqueName + " is a " + this.gender + " " + this.animalType + " that " + (this.hasLaidEggs ? "has" : "has not") + " laid eggs and " + (this.isCarryingEgg ? "is" : "is not") + " carrying an egg.");
     }
 
     void setHasLaidEggs(boolean hasLaidEggs){

@@ -8,13 +8,13 @@ abstract class Bird extends Animal {
         this.canFly = canFly;
     }
 
-    void setHasTalons(boolean hasTalons){
+    final void setHasTalons(boolean hasTalons){
         this.hasTalons = hasTalons;
     }
-    void setCanFly(boolean canFly){
+    final void setCanFly(boolean canFly){
         this.canFly = canFly;
     }
 
-    boolean getHasTalons() { return this.hasTalons; }
-    boolean getCanFly() { return this.canFly; }
+    final boolean getHasTalons() { return this.hasTalons; }
+    final boolean getCanFly() { return this.canFly; }
 }

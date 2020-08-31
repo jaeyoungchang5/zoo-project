@@ -8,13 +8,13 @@ abstract class Mammal extends Animal {
         this.potentiallyDeadly = potentiallyDeadly;
     }
 
-    void setEatsMeat(boolean eatsMeat){
+    final void setEatsMeat(boolean eatsMeat){
         this.eatsMeat = eatsMeat;
     }
-    void setPotentiallyDeadly(boolean potentiallyDeadly){
+    final void setPotentiallyDeadly(boolean potentiallyDeadly){
         this.potentiallyDeadly = potentiallyDeadly;
     }
 
-    boolean getEatsMeat() { return this.eatsMeat; }
-    boolean getPotentiallyDeadly() { return this.potentiallyDeadly; }
+    final boolean getEatsMeat() { return this.eatsMeat; }
+    final boolean getPotentiallyDeadly() { return this.potentiallyDeadly; }
 }

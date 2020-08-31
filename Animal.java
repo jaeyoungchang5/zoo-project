@@ -11,28 +11,23 @@ abstract class Animal {
         this.gender = gender;
     }
     // special display (abstract class) - something everybody does, but everybody does differently
-    // abstract void setSpecialAttribute(String specialAttribute) {
-    //     return;
-    // }
-    void setupAnimal(){
-        System.out.println("What type of animal?");
-    }
+    abstract void displaySpecialInfo();
 
-    void setUniqueName(String uniqueName){
+    final void setUniqueName(String uniqueName){
         this.uniqueName = uniqueName;
     }
-    void setConservationStatus(String conservationStatus){
+    final void setConservationStatus(String conservationStatus){
         this.conservationStatus = conservationStatus;
     }
-    void setAnimalType(String animalType){
+    final void setAnimalType(String animalType){
         this.animalType = animalType;
     }
-    void setGender(String gender){
+    final void setGender(String gender){
         this.gender = gender;
     }
 
-    String getUniqueName() { return this.uniqueName; }
-    String getConservationStatus() { return this.conservationStatus; }
-    String getAnimalType() { return this.animalType; }
-    String getGender() { return this.gender; }
+    final String getUniqueName() { return this.uniqueName; }
+    final String getConservationStatus() { return this.conservationStatus; }
+    final String getAnimalType() { return this.animalType; }
+    final String getGender() { return this.gender; }
 }
