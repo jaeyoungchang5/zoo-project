@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class ZooTest {
+    /* SETUP ANIMALS */
     static Animal[] setupAnimals(){
         Animal[] animals = new Animal[6];
         animals[0] = new Wolf("Akela", "male", true, true);
@@ -9,9 +10,11 @@ public class ZooTest {
         animals[3] = new Lion("Nala", "female", false, true);
         animals[4] = new Penguin("Kowalski", "male", false, true);
         animals[5] = new Alligator("Swampy", "female", true, "13.6");
+
         printSummary(animals);
         System.out.println();
         printVerboseList(animals);
+
         return animals;
     }
 
@@ -36,13 +39,16 @@ public class ZooTest {
                 j++;
             }
         }
+
         printSummary(newAnimals);
         return newAnimals;
     }
 
+    /* PRINT SUMMARY */
     static void printSummary(Animal[] animals) {
         int numAlligator = 0, numFalcon = 0, numLion = 0, numPenguin = 0, numTurtle = 0, numWolf = 0;
         int numTotal = 0;
+
         for (int i = 0; i < animals.length; i++){
             if (animals[i].getAnimalType().compareTo("wolf") == 0)
                 numWolf++;
@@ -59,10 +65,10 @@ public class ZooTest {
                 
             numTotal++;
         }
-        System.out.println("Summary");
+
+        System.out.println("\nSummary");
         System.out.println("There are " + numTotal + " animals in the zoo.");
         
-       
         if (numWolf > 0)
             System.out.println(numWolf + " Wolf(ves)");
         if (numLion > 0) 
@@ -81,21 +87,22 @@ public class ZooTest {
     static void printVerboseList(Animal[] animals){
         System.out.println("Verbose List of Animals with details:");
         System.out.println("   Name       Species");
+
         for (int i = 0; i < animals.length; i++){
-            
             System.out.printf("%d: %-10s %-10s\n", i+1, animals[i].getUniqueName(), animals[i].getAnimalType());
         }
     }
 
+    /* DISPLAY SPECIFIC INFO */
     static void displayInfo(Animal[] animals, String name){
         for (int i = 0; i < animals.length; i++){
             if (name.compareTo(animals[i].getUniqueName()) == 0){
                 animals[i].displaySpecialInfo();
             }
         }
-
     }
 
+    /* PRINT OPTIONS */
     static void printOptions(){
         System.out.println();
         System.out.println("Options:");
@@ -106,7 +113,7 @@ public class ZooTest {
     }
 
     public static void main (String[] args){
-        System.out.println("Type exit at any time to end the program.\n");
+        System.out.println("Type exit at any time to end the program.");
 
         Animal[] animals = setupAnimals();
         Scanner myScanner = new Scanner(System.in);
@@ -118,7 +125,7 @@ public class ZooTest {
 
             /* add functionality */
             if (option.compareTo("add") == 0){
-				System.out.println("\nYou can add a wolf, lion, falcon, penguin, turtle, or aligator");
+				System.out.println("\nYou can add a wolf, lion, falcon, penguin, turtle, or alligator");
                 
                 System.out.println();
                 System.out.println("Animal type: ");
@@ -203,6 +210,7 @@ public class ZooTest {
 					animals = addAnimal(newAnimal, animals);
 				}
 
+                /* adding a turtle */
 				else if(animalType.compareTo("turtle") == 0){
                     boolean hasLaidEggs = false;
                     boolean isLandBased = false;
@@ -221,6 +229,7 @@ public class ZooTest {
 					animals = addAnimal(newAnimal, animals);
 				}
 
+                /* adding an alligator */
 				else if(animalType.compareTo("alligator") == 0){
                     boolean isMother = false;
                     String tailLength;
@@ -241,21 +250,31 @@ public class ZooTest {
 					System.out.println("Invalid Animal Type");
 				}
                 
+            /* delete functionality */
             } else if (option.compareTo("delete") == 0){
                 System.out.println("Animal name: ");
                 String name = myScanner.nextLine();
+
                 animals = deleteAnimal(name, animals);
+
+            /* display functionality */
             } else if (option.compareTo("display") == 0){
                 printSummary(animals);
                 System.out.println();
                 printVerboseList(animals);
                 System.out.println();
+
                 System.out.println("What animal would you like to display information about?");
                 String name = myScanner.nextLine();
+
                 displayInfo(animals, name);
+
+            /* exit */
             } else if (option.compareTo("exit") == 0) {
                 System.out.println("bye");
                 break;
+
+            /* invalid option */
             } else {
                 System.out.println("Try again");
             }
